@@ -48,7 +48,7 @@ public class TaskFunction {
 
 			JsonNode node = null;
 			try {
-				node = objectMapper.readTree(tweetString).get("User").get("Description");
+				node = objectMapper.readTree(tweetString).get("Text");
 			} catch (JsonMappingException e) {
 				e.printStackTrace();
 			} catch (JsonProcessingException e) {
