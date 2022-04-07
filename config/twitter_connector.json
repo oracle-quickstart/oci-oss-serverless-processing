@@ -1,0 +1,18 @@
+{
+	"name": "twitter-connector",
+	"config": {
+		"connector.class": "com.github.jcustenborder.kafka.connect.twitter.TwitterSourceConnector",
+		"tasks.max": "1",
+		"filter.keywords": "${filter}",
+		"kafka.status.topic": "${topic_name}",
+		"process.deletes": "false",
+		"twitter.oauth.accessToken": "${twitter_oauth_accessToken}",
+		"twitter.oauth.accessTokenSecret": "${twitter_oauth_accessTokenSecret}",
+		"twitter.oauth.consumerKey": "${twitter_oauth_consumerKey}",
+		"twitter.oauth.consumerSecret": "${twitter_oauth_consumerSecret}",
+		"filter.userIds": "",
+		"queue.batch.size": "50",
+		"queue.empty.ms": "1000",
+		"twitter.debug": "true"
+	}
+}

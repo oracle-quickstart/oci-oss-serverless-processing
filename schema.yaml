@@ -1,0 +1,143 @@
+# Copyright (c) 2020, Oracle and/or its affiliates. All rights reserved.
+# Licensed under the Universal Permissive License v 1.0 as shown at https://oss.oracle.com/licenses/upl.
+
+title: "Demo for Serverless processing"
+stackDescription: "Demo showcases serverless processing usign components like Service connector hub, object storage, functions and Oracle streams."
+schemaVersion: 1.1.0
+version: "20200301"
+locale: "en"
+
+variableGroups:
+- title: ${Messages.solutionsHub.generalConfig()}
+  visible: false
+  variables:
+  - tenancy_ocid
+  - current_user_ocid
+  - VCN-CIDR
+  - fnsubnet-CIDR
+  - ocir_repo_name
+  - service_connector_tasks_batch_time_in_sec
+  - service_connector_tasks_batch_size_in_kbs
+  - generate_public_ssh_key
+  - ssh_public_key
+  - public_ssh_key
+  - private_ssh_key_path
+  - fingerprint
+  - instance_os
+  - linux_os_version
+  - instance_flex_shape_ocpus
+  - instance_flex_shape_memory
+  - instance_shape
+  
+
+
+- title: ${Messages.solutionsHub.requiredConfig()}
+  visible: true  
+  variables:
+  - ocir_user_name
+  - ocir_user_password
+  - twitter_oauth_accessToken
+  - twitter_oauth_accessTokenSecret
+  - twitter_oauth_consumerKey
+  - twitter_oauth_consumerSecret
+
+
+- title: ${Messages.solutionsHub.optionalConfig()}
+  visible: true  
+  variables:
+  - compartment_ocid
+  - region
+  - source_stream_name
+  - target_stream_name
+  - stream_partitions
+  - stream_pool_name
+  - twitter_filter
+  - bucket_name
+  - sch_connector_name
+
+variables:
+
+  compartment_ocid:
+    type: oci:identity:compartment:id
+    required: true
+    title: ${Messages.solutionsHub.genericVariables.compartment.title()}
+    description: ${Messages.solutionsHub.genericVariables.compartment.description()}
+
+  region:
+    type: oci:identity:region:name
+    required: true
+    title: "Region"
+    description: "Region where the stack will be deployed."
+
+  twitter_oauth_accessToken:
+    type: string
+    required: true
+    title: "OAuth Access token"
+    description: "Access token, one can get this from twitter developer portal"
+
+  twitter_oauth_accessTokenSecret:
+    type: string
+    required: true
+    title: "OAtuh Access token secret"
+    description: "Secret of OAuth access token, one can get this from twitter developer portal"
+
+  twitter_oauth_consumerKey:
+    type: string
+    required: true
+    title: "OAuth Consumer Key"
+    description: "Consumer key of OAuth, one can get this from twitter developer portal"
+
+  twitter_oauth_consumerSecret:
+    type: string
+    required: true
+    title: "OAuth Consumer Secret"
+    description: "Consumer secret,one can get this from twitter developer portal"
+
+  twitter_filter:
+    type: string
+    required: true
+    title: "Filter keywords"
+    description: "Keywords used for tweet filtering"
+
+  ocir_user_name:
+    type: string
+    required: true
+    title: "User Name"
+    description: "User name to connect to OCIR, to push fn image."
+
+  ocir_user_password:
+    type: string
+    required: true
+    title: "Auth Code"
+    description: "Auth code for connecting to OCIR, to push fn image."
+
+  source_stream_name:
+    type: string
+    required: true
+    title: "Name of Stream"
+    description: "Name of stream where tweets from twitter get delivered."
+
+  target_stream_name:
+    type: string
+    required: true
+    title: "Name of Stream"
+    description: "Name of stream where key phrases from AI service get delivered."
+
+  stream_partitions:
+    type: string
+    required: true
+    title: "No of partitions"
+    description: "No of partitions in stream"
+
+  stream_pool_name:
+    type: string
+    required: true
+    title: "Name of Stream pool"
+    description: "Name of stream pool."
+
+  sch_connector_name:
+    type: string
+    required: true
+    title: "Service Connector name"
+    description: "Name service connector."
+

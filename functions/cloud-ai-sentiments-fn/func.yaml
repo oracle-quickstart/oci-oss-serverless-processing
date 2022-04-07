@@ -1,0 +1,9 @@
+schema_version: 20180708
+name: cloud-ai-sentiments-fn
+version: 0.0.1
+runtime: java8
+build_image: fnproject/fn-java-fdk-build:1.0.145
+run_image: fnproject/fn-java-fdk:1.0.145
+cmd: com.ai.sentiments.fn.TaskFunction::handleRequest
+memory: 128
+timeout: 300
