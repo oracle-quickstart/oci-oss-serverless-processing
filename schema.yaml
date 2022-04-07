@@ -2,7 +2,7 @@
 # Licensed under the Universal Permissive License v 1.0 as shown at https://oss.oracle.com/licenses/upl.
 
 title: "Demo for Serverless processing"
-stackDescription: "Demo showcases serverless processing usign components like Service connector hub, object storage, functions and Oracle streams."
+stackDescription: "Demo showcases serverless processing usign components like Service connector hub, functions and Oracle streams."
 schemaVersion: 1.1.0
 version: "20200301"
 locale: "en"
@@ -52,7 +52,6 @@ variableGroups:
   - stream_partitions
   - stream_pool_name
   - twitter_filter
-  - bucket_name
   - sch_connector_name
 
 variables:

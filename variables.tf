@@ -20,10 +20,6 @@ variable "twitter_filter" {
 variable "ocir_user_name" {}
 variable "ocir_user_password" {}
 
-variable "bucket_name" {
-  default = "tweets_ai_bucket"
-}
-
 variable "source_stream_name" {
   default = "tweets"
 }
