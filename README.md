@@ -45,7 +45,7 @@ If you don't have the required permissions and quota, contact your tenancy admin
 Now, you'll want a local copy of this repo. You can make that with the commands:
 
     git clone https://github.com/oracle-quickstart/oci-oss-serverless-processing.git
-    cd oci-sch-log2bucket
+    cd oci-oss-serverless-processing
     ls
 
 ### Set Up and Configure Terraform
